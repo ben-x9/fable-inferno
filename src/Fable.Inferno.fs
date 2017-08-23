@@ -571,6 +571,12 @@ module Props =
         | Y of U2<float, string>
         interface IProp
 
+    type LifecycleAttr =
+        | OnComponentWillMount of (unit -> unit)
+        | OnComponentDidMount of (Browser.HTMLElement -> unit)
+        | OnComponentWillUnmount of (Browser.HTMLElement -> unit)
+        interface IHTMLProp
+
 open Props
 open Fable.Core.JsInterop
 
